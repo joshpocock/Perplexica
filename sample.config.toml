@@ -3,10 +3,10 @@ PORT = 3001 # Port to run the server on
 SIMILARITY_MEASURE = "cosine" # "cosine" or "dot"
 
 [API_KEYS]
-OPENAI = "" # OpenAI API key - sk-1234567890abcdef1234567890abcdef
-GROQ = "" # Groq API key - gsk_1234567890abcdef1234567890abcdef
-ANTHROPIC = "" # Anthropic API key - sk-ant-1234567890abcdef1234567890abcdef
+OPENAI = "${OPENAI_API_KEY}" # OpenAI API key
+GROQ = "${GROQ_API_KEY}" # Groq API key
+ANTHROPIC = "${ANTHROPIC_API_KEY}" # Anthropic API key
 
 [API_ENDPOINTS]
-SEARXNG = "http://localhost:32768" # SearxNG API URL
-OLLAMA = "" # Ollama API URL - http://host.docker.internal:11434
+SEARXNG = "${SEARXNG_API_URL}" # SearxNG API URL
+OLLAMA = "${OLLAMA_API_URL}" # Ollama API URL

@@ -8,5 +8,5 @@ GROQ = "${GROQ_API_KEY}" # Groq API key
 ANTHROPIC = "${ANTHROPIC_API_KEY}" # Anthropic API key
 
 [API_ENDPOINTS]
-SEARXNG = "${SEARXNG_API_URL}" # SearxNG API URL
-OLLAMA = "${OLLAMA_API_URL}" # Ollama API URL
+SEARXNG = "http://localhost:32768" # SearxNG API URL
+OLLAMA = "" # Ollama API URL - http://host.docker.internal:11434

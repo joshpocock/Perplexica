@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   searxng:
     image: docker.io/searxng/searxng:latest
@@ -15,12 +17,17 @@ services:
       dockerfile: backend.dockerfile
       args:
         - SEARXNG_API_URL=http://searxng:8080
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
     depends_on:
       - searxng
     ports:
       - 3004:3001
     volumes:
       - backend-dbstore:/home/perplexica/data
+      - type: bind
+        source: ${GOOGLE_APPLICATION_CREDENTIALS}
+        target: /app/config/credentials.json
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     networks:
